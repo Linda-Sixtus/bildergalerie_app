@@ -1,56 +1,45 @@
 import 'package:flutter/material.dart';
 import 'galery_item.dart';
+import 'postview.dart';
 
-class PostViewPage extends StatelessWidget {
-
+class GalleryCardWidget extends StatelessWidget {
   final GalleryItem galleryItem;
 
-  const PostViewPage({super.key, required this.galleryItem});
+  const GalleryCardWidget({super.key, required this.galleryItem});
+  final String defaultImagePath = 'assets/default_image.jpg';
 
   @override
   Widget build(BuildContext context) {
 
-
-
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: const Text('Post View'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        foregroundColor: Colors.white,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => PostViewPage(galleryItem: galleryItem),
         ),
-
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.share),
-            onPressed: () {
-              // Logik zum Teilen des Posts
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.favorite_border),
-            onPressed: () {
-              // Logik zum Favorisieren des Posts
-            },
-          ),
-        ],
       ),
-      body: Column(
+      child: Card(
+      elevation: 8.0, // Schatten für die Karte
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(
+          15.0,
+        ), // Abgerundete Ecken der Karte
+      ),
+      clipBehavior: Clip
+          .antiAlias, // Stellt sicher, dass der Inhalt innerhalb der abgerundeten Ecken bleibt
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           // Bildbereich
-          Image.asset(
+          Expanded(
+            // Bild nimmt den verfügbaren Platz ein
+            child: Image.asset(
               galleryItem.imagePath,
               width:
                   double.infinity, // Bild nimmt die volle Breite der Karte ein
               fit: BoxFit.cover, // Bild füllt den Bereich aus
-              height: 400.0, // Feste Höhe für das Bild
-              alignment: Alignment.topCenter,
+              height: 150.0, // Feste Höhe für das Bild
+
               errorBuilder: (context, error, stackTrace) {
                 return Container(
                   color: Colors.grey[300],
@@ -64,18 +53,18 @@ class PostViewPage extends StatelessWidget {
                 );
               },
             ),
-          
+          ),
           // Textbereich (weißgrau)
           Container(
             color: Colors.grey[50], // Weißgrauer Hintergrund
-            padding: const EdgeInsets.all(23.0), // Innenabstand für den Text
+            padding: const EdgeInsets.all(12.0), // Innenabstand für den Text
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
                   galleryItem.title,
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey[800],
                   ),
@@ -85,26 +74,16 @@ class PostViewPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 4.0), // Kleiner Abstand
                 Text(
-                  galleryItem.date.toString(),
-                  style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
-                ),
-                const SizedBox(height: 4.0), // Kleiner Abstand
-                Text(
                   galleryItem.description,
                   style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
+                  maxLines: 2, // Beschränkung auf 2 Zeilen
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
           ),
         ],
       ),
-      );
-
-
-
-
-
-
-
+    ));
   }
-} 
+}

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'galery.dart';
-import 'postview.dart';
 import 'user_info.dart';
 
 void main() {
@@ -16,9 +15,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Bildergalerie',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 93, 180, 124)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 78, 46, 100)),
       ),
-      home: const MyHomePage(title: 'My Gallery'),
+      home: const MyHomePage(title: 'Anime Gallery'),
     );
   }
 }
@@ -41,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-
+        foregroundColor: Colors.white,
         title: Text(widget.title),
       ),
       body: Center(

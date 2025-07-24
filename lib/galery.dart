@@ -1,105 +1,43 @@
+import 'package:bildergalerie_app/galery_item.dart';
 import 'package:flutter/material.dart';
+import 'galery_card_widget.dart';
 
 class GaleryPage extends StatelessWidget {
-  const GaleryPage({super.key});
 
+  GaleryPage({super.key});
+
+  final List<GalleryItem> galleryItems = [
+    GalleryItem(title: 'Mila Superstar', description: 'Eine wunderschöne Pflanze, die Ihr Zuhause belebt und frische Luft spendet.', imageName: 'mila.jpg'),
+    GalleryItem(title: 'Neon Genesis Evangelion', description: 'dfgs dfghsdfg dsfgsdfg sdfgsdfg sdfgsdfg sdfgsdfg sdfgsdfg sfdgsdfg sfdgsdfg sdfgsdfg sfdgsdf dsfgdsfg sdfg dfg Diese seltene Blüte bringt Farbe und Eleganz in jeden Raum.', imageName: 'neon.jpg'),
+    GalleryItem(title: 'Whisper of the Heart', description: 'Ideal für Schreibtische oder kleine Ecken, schafft eine entspannende Atmosphäre.', imageName: 'whisperoftheheart.jpg'),
+    GalleryItem(title: 'Oh my goddes', description: 'Pflegeleicht und perfekt für sonnige Standorte, ein echter Hingucker.', imageName: 'ohmy.jpg'),
+    GalleryItem(title: 'Sailor Moon', description: 'Verleiht jedem Raum eine natürliche und beruhigende Note.', imageName: 'sailor.jpg'),
+    GalleryItem(title: 'Ranma 1/2', description: 'Ideal für Anfänger, da sie sehr widerstandsfähig und anpassungsfähig ist.', imageName: 'ranma.jpg'),
+  ];
+ 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      primary: false,
-      padding: const EdgeInsets.all(20),
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      crossAxisCount: 2,
-      children: <Widget>[
-        Card(
-          elevation: 7,
-          color: Colors.teal[50],
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('A walk in the park'),
+    return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // 2 Spalten
+            crossAxisSpacing: 10.0, // Horizontaler Abstand zwischen den Karten
+            mainAxisSpacing: 10.0, // Vertikaler Abstand zwischen den Karten
+            childAspectRatio: 0.75, // Seitenverhältnis der Karten (Breite / Höhe)
           ),
+          itemCount: galleryItems.length,
+          itemBuilder: (context, index) {
+            return GalleryCardWidget(
+              galleryItem: galleryItems[index],
+            );
+          },
         ),
-        Card(
-          elevation: 7,
-          color: Colors.teal[200],
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Sound of screams but the'),
-          ),
-        ),
-        Card(
-          elevation: 7,
-          color: Colors.teal[300],
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('in the park'),
-          ),
-        ),
-        Card(
-          elevation: 7,
-          color: const Color.fromARGB(255, 114, 220, 250),
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('blue winter'),
-          ),
-        ),
+      );
+  }
 
-        Card(
-          elevation: 7,
-          color: const Color.fromARGB(255, 194, 227, 223),
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('in the park'),
-          ),
-        ),
-        Card(
-          elevation: 7,
-          color: const Color.fromARGB(255, 234, 105, 14),
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Summertime'),
-          ),
-        ),
+ 
 
-        Card(
-          elevation: 7,
-          color: const Color.fromARGB(255, 238, 197, 107),
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('spring'),
-          ),
-        ),
-
-        Card(
-          elevation: 7,
-          color: const Color.fromARGB(255, 255, 153, 153),
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Autumn'),
-          ),
-        ),
-        Card(
-          elevation: 7,
-          color: const Color.fromARGB(255, 255, 204, 153),
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Winter'),
-          ),
-        ),
-
-        Card(
-          elevation: 7,
-          color: const Color.fromARGB(255, 153, 204, 255),
-          child: Container(
-            padding: const EdgeInsets.all(8),
-            child: const Text('Rainy days'),
-          ),
-        ),
-      ],
-    );
+}
 
 
-
-
-  }}
