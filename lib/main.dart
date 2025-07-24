@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'galery.dart';
+import 'gallery.dart';
 import 'user_info.dart';
 
 void main() {
@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
 
-  List<Widget> p15screens = [GaleryPage(), UserInfoPage()];
+  List<Widget> p15screens = [GalleryPage(), UserInfoPage()];
 
   @override
   Widget build(BuildContext context) {

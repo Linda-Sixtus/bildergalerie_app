@@ -26,7 +26,7 @@ class UserInfoPage extends StatelessWidget {
               Text(
                 'Über mich',
                 style: TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 40.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.grey[800],
                 ),
@@ -37,7 +37,7 @@ class UserInfoPage extends StatelessWidget {
               const SizedBox(height: 4.0), // Kleiner Abstand
               Text(
                 'FluxFox',
-                style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
+                style: TextStyle(fontSize: 20.0, color: Colors.grey[600]),
               ),
               const SizedBox(height: 4.0), // Kleiner Abstand
               Text(

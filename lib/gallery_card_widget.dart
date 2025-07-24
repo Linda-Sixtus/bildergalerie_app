@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'galery_item.dart';
+import 'gallery_item.dart';
 import 'postview.dart';
 
 class GalleryCardWidget extends StatelessWidget {

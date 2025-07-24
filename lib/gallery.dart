@@ -1,10 +1,10 @@
-import 'package:bildergalerie_app/galery_item.dart';
+import 'package:bildergalerie_app/gallery_item.dart';
 import 'package:flutter/material.dart';
-import 'galery_card_widget.dart';
+import 'gallery_card_widget.dart';
 
-class GaleryPage extends StatelessWidget {
+class GalleryPage extends StatelessWidget {
 
-  GaleryPage({super.key});
+  GalleryPage({super.key});
 
   final List<GalleryItem> galleryItems = [
     GalleryItem(title: 'Mila Superstar', description: 'Eine wunderschöne Pflanze, die Ihr Zuhause belebt und frische Luft spendet.', imageName: 'mila.jpg'),
