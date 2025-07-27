@@ -13,8 +13,11 @@ class UserInfoPage extends StatelessWidget {
         // Bildbereich
         CircleAvatar(
           radius: 100.0, // Radius des Avatars
-          backgroundImage: AssetImage('assets/totoro.jpg'), // Pfad zum Avatar-Bild
-        )),
+          backgroundImage: AssetImage('assets/BG_only.png'), // Pfad zum Avatar-Bild
+          child: Stack(children: [
+            Image.asset('assets/SUNIMO_MOTHER_Ai.png'),
+          ]
+        ))),
         const SizedBox(height: 20.0), // Abstand zwischen Avatar und Text
         // Textbereich (weißgrau)
         Container(
@@ -24,7 +27,7 @@ class UserInfoPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Über mich',
+                'Über Sunimo',
                 style: TextStyle(
                   fontSize: 40.0,
                   fontWeight: FontWeight.bold,
@@ -41,7 +44,7 @@ class UserInfoPage extends StatelessWidget {
               ),
               const SizedBox(height: 4.0), // Kleiner Abstand
               Text(
-                'Lorem ipsum fluxi sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+                'Willkommen in der Welt der Sunimos! Erleben Sie die Vielfalt unserer geliebten außerirdischen Wesen, die Sie mit Liebe und Empathie versorgen. Jedes Sunimo ist einzigartig und bringt Freude in Ihr Leben. Lassen Sie sich von der Magie der Sunimos verzaubern und entdecken Sie die Schönheit, die sie in unsere Welt bringen können.',
                 style: TextStyle(fontSize: 14.0, color: Colors.grey[600]),
               ),
             ],

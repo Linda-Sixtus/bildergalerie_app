@@ -13,11 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Bildergalerie',
+      title: 'Sunimo gallery',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 78, 46, 100)),
+        primarySwatch: Colors.teal,
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 101, 189, 189)),
       ),
-      home: const MyHomePage(title: 'Anime Gallery'),
+      home: const MyHomePage(title: 'Sunimo Galerie'),
     );
   }
 }
@@ -39,6 +41,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(200, 209, 130, 255),
+                const Color.fromARGB(200, 255, 213, 240),
+                const Color.fromARGB(200, 112, 229, 255),
+              ],
+            ),
+          ),
+        ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         foregroundColor: Colors.white,
         title: Text(widget.title),
@@ -48,8 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
        bottomNavigationBar: NavigationBar(
           destinations: [
-            NavigationDestination(icon: Icon(Icons.image), label: "Bilder"),
-            NavigationDestination(icon: Icon(Icons.person), label: "Über mich"),
+            NavigationDestination(icon: Image.asset('assets/Egg_3D.png', height: 50), label: "Sunimo"),
+            NavigationDestination(icon: Image.asset('assets/SUNIMO_MOTHER_Ai.png', height: 50), label: "Über Sunimo"),
           ],
           selectedIndex: currentIndex,
           onDestinationSelected: (index) {

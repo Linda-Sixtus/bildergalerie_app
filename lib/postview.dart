@@ -14,8 +14,19 @@ class PostViewPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+                flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                const Color.fromARGB(200, 209, 130, 255),
+                const Color.fromARGB(200, 255, 213, 240),
+                const Color.fromARGB(200, 112, 229, 255),
+              ],
+            ),
+          ),
+        ),
         elevation: 0,
-        title: const Text('Post View'),
+        title: const Text('Sunimo Details'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         foregroundColor: Colors.white,
         leading: IconButton(
@@ -43,14 +54,17 @@ class PostViewPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          SizedBox(height: 20.0),
           // Bildbereich
-          Image.asset(
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(
               galleryItem.imagePath,
               width:
                   double.infinity, // Bild nimmt die volle Breite der Karte ein
-              fit: BoxFit.cover, // Bild füllt den Bereich aus
-              height: 400.0, // Feste Höhe für das Bild
+              fit: BoxFit.contain, // Bild füllt den Bereich aus
               alignment: Alignment.topCenter,
+            
               errorBuilder: (context, error, stackTrace) {
                 return Container(
                   color: Colors.grey[300],
@@ -63,7 +77,7 @@ class PostViewPage extends StatelessWidget {
                   ),
                 );
               },
-            ),
+            )),
           
           // Textbereich (weißgrau)
           Container(

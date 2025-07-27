@@ -7,12 +7,12 @@ class GalleryPage extends StatelessWidget {
   GalleryPage({super.key});
 
   final List<GalleryItem> galleryItems = [
-    GalleryItem(title: 'Mila Superstar', description: 'Eine wunderschöne Pflanze, die Ihr Zuhause belebt und frische Luft spendet.', imageName: 'mila.jpg'),
-    GalleryItem(title: 'Neon Genesis Evangelion', description: 'dfgs dfghsdfg dsfgsdfg sdfgsdfg sdfgsdfg sdfgsdfg sdfgsdfg sfdgsdfg sfdgsdfg sdfgsdfg sfdgsdf dsfgdsfg sdfg dfg Diese seltene Blüte bringt Farbe und Eleganz in jeden Raum.', imageName: 'neon.jpg'),
-    GalleryItem(title: 'Whisper of the Heart', description: 'Ideal für Schreibtische oder kleine Ecken, schafft eine entspannende Atmosphäre.', imageName: 'whisperoftheheart.jpg'),
-    GalleryItem(title: 'Oh my goddes', description: 'Pflegeleicht und perfekt für sonnige Standorte, ein echter Hingucker.', imageName: 'ohmy.jpg'),
-    GalleryItem(title: 'Sailor Moon', description: 'Verleiht jedem Raum eine natürliche und beruhigende Note.', imageName: 'sailor.jpg'),
-    GalleryItem(title: 'Ranma 1/2', description: 'Ideal für Anfänger, da sie sehr widerstandsfähig und anpassungsfähig ist.', imageName: 'ranma.jpg'),
+    GalleryItem(title: 'Ben', description: 'Das ist Ben. Er ist sehr ruhig und gefestigt in seinem Charakter, und liebt es in die Zukunft zu sehen.', imageName: 'SUNIMO_MOTHER_Ben.png'),
+    GalleryItem(title: 'Billy', description: 'Das ist Billy. Billy ist sehr verspielt, nimmt Regeln nicht allzu ernst, aber hat immer ein gutes Herz.', imageName: 'SUNIMO_MOTHER_Billy.png'),
+    GalleryItem(title: 'Cindy', description: 'Das ist Cindy. Cindy liebt buntes, ist öfter Eitel, und isst für ihr Leben gern Süßigkeiten.', imageName: 'SUNIMO_MOTHER_Cindy.png'),
+    GalleryItem(title: 'Filly', description: 'Das ist Filly. Filly ist immer glücklich und lässt sich nicht so schnell die Laune verderben. Ein echter Kumpeltyp.', imageName: 'SUNIMO_MOTHER_Filly.png'),
+    GalleryItem(title: 'Iduna', description: 'Das ist Iduna. Sie ist sehr sensibel und vergesslich, und freut sich über Zuneigung, Unterstützung und einen Spielkameraden.', imageName: 'SUNIMO_MOTHER_Iduna.png'),
+    GalleryItem(title: 'Fin', description: 'Das ist Fin. Fin ist nur am Essen. Passe auf, dass er sich an die Regeln hält. Er ist sehr eigensinnig, jedoch liebenswert.', imageName: 'SUNIMO_MOTHER_Fin.png'),
   ];
  
   @override
